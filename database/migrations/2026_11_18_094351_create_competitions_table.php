@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('competitions', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
-            $table->unsignedBigInteger('api_id')->unique();
+            $table->integer('api_id')->unique();
             $table->string('name', 100);
+            $table->string('country', 100);
+            $table->timestamps();
         });
     }
 

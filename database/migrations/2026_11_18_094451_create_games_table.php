@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('api_id')->unique();
-            $table->foreignId('competition_id')->constrained('competitions')->onDelete('cascade');
+            $table->integer('api_id')->unique();
+            $table->foreignId('competition_id')->constrained('competitions');
             $table->string('home_team', 100);
             $table->string('away_team', 100);
             $table->string('home_team_logo', 255)->nullable();
             $table->string('away_team_logo', 255)->nullable();
-            $table->string('status', 20);
-            $table->timestamp('start_time');
-            $table->unsignedInteger('home_team_score')->nullable();
-            $table->unsignedInteger('away_team_score')->nullable();
+            $table->string('status', 50);
+            $table->dateTime('kickoff_at');
+            $table->integer('home_score')->nullable();
+            $table->integer('away_score')->nullable();
             $table->timestamps();
         });
     }
