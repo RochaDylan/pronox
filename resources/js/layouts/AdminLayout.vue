@@ -1,29 +1,29 @@
 <script setup lang="ts">
 import BottomNav from '@/components/BottomNav.vue';
 import { type NavItem } from '@/types';
-import { LayoutDashboard, PersonStandingIcon, Target, UserRound } from 'lucide-vue-next';
+import { PhSoccerBall, PhSquaresFour, PhUser, PhUsersThree } from '@phosphor-icons/vue';
 
 const items: NavItem[] = [
     {
         title: 'Accueil',
         href: route('admin.dashboard'),
-        icon: LayoutDashboard,
+        icon: PhSquaresFour,
     },
 
     {
         title: 'Matchs',
         href: route('admin.games'),
-        icon: Target,
+        icon: PhSoccerBall,
     },
     {
         title: 'Utilisateurs',
         href: route('admin.users'),
-        icon: UserRound,
+        icon: PhUser,
     },
     {
         title: 'Groupes',
         href: route('admin.groups'),
-        icon: PersonStandingIcon,
+        icon: PhUsersThree,
     },
 ];
 </script>

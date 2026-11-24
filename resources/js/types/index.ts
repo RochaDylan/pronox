@@ -1,4 +1,4 @@
-import type { LucideIcon } from 'lucide-vue-next';
+import type { Component } from 'vue';
 
 export interface Auth {
     user: User;
@@ -12,7 +12,7 @@ export interface BreadcrumbItem {
 export interface NavItem {
     title: string;
     href: string;
-    icon?: LucideIcon;
+    icon?: Component;
     isActive?: boolean;
 }
 
@@ -38,6 +38,29 @@ export interface User {
     email_verified_at: string | null;
     created_at: string;
     updated_at: string;
+}
+
+export interface Game {
+    api_id: number;
+    competition_id: number;
+    home_team: string;
+    away_team: string;
+    home_team_logo: string | null;
+    away_team_logo: string | null;
+    status: string;
+    kickoff_at: Date;
+    home_score: number;
+    away_score: number;
+}
+
+export interface Group {
+    id: number;
+    name: string;
+    description: string | null;
+    visibility: string;
+    invitation_code: string;
+    competition_id: number;
+    created_by: number;
 }
 
 export type BreadcrumbItemType = BreadcrumbItem;

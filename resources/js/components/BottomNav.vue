@@ -24,10 +24,10 @@ const isActive = (item: NavItem): boolean => {
             v-for="item in items"
             :key="item.title"
             :href="item.href"
-            class="flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-1 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-            :class="{ 'bg-accent text-accent-foreground': isActive(item) }"
+            class="flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-1 text-sm font-medium transition-colors"
+            :class="isActive(item) ? 'text-[#C8F25C]' : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'"
         >
-            <component :is="item.icon" class="size-5" />
+            <component :is="item.icon" :size="20" :weight="isActive(item) ? 'fill' : 'regular'" />
             <span>{{ item.title }}</span>
         </Link>
     </nav>

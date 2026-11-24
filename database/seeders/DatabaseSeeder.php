@@ -48,8 +48,17 @@ class DatabaseSeeder extends Seeder
             'country' => 'Europe',
         ]);
 
-        Game::factory(10)->finished()->for($superLeague)->create();
-        Game::factory(10)->for($championsLeague)->create();
+        Game::factory(8)->finished()->for($superLeague)->create();
+        Game::factory(2)->withoutScore()->for($superLeague)->create();  
+        Game::factory(1)->postponed()->for($superLeague)->create();      
+        Game::factory(1)->live()->for($superLeague)->create();
+        Game::factory(2)->today()->for($superLeague)->create();
+        Game::factory(6)->for($superLeague)->create();  
+
+        Game::factory(5)->finished()->for($championsLeague)->create();
+        Game::factory(1)->postponed()->for($championsLeague)->create();  
+        Game::factory(1)->today()->for($championsLeague)->create();
+        Game::factory(6)->for($championsLeague)->create();
 
         Group::factory(5)->create()->each(function ($group) {
             $users = User::inRandomOrder()->take(rand(2, 5))->get();
