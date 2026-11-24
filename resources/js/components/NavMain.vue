@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { type SharedData } from '@/types';
-import { Link, usePage } from '@inertiajs/vue3';
 import type { Component } from 'vue';
 
 interface NavItem {
@@ -14,10 +11,10 @@ defineProps<{
     items: NavItem[];
 }>();
 
-const page = usePage<SharedData>();
+// const page = usePage<SharedData>();
 </script>
 
-<template>
+<!-- <template>
     <SidebarGroup class="px-2 py-0">
         <SidebarGroupLabel>Platform</SidebarGroupLabel>
         <SidebarMenu>
@@ -31,4 +28,4 @@ const page = usePage<SharedData>();
             </SidebarMenuItem>
         </SidebarMenu>
     </SidebarGroup>
-</template>
+</template> -->
