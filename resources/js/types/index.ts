@@ -41,16 +41,19 @@ export interface User {
 }
 
 export interface Game {
+    id: number,
     api_id: number;
     competition_id: number;
+    competition?: {id: number; name: string}
     home_team: string;
     away_team: string;
     home_team_logo: string | null;
     away_team_logo: string | null;
-    status: string;
-    kickoff_at: Date;
+    status: 'scheduled' | 'live' | 'finished' | 'postponed' | 'cancelled';
+    kickoff_at: string;
     home_score: number;
     away_score: number;
+    prediction_count?: number;
 }
 
 export interface Group {

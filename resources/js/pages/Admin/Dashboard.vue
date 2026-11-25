@@ -2,7 +2,7 @@
 import StatTile from '@/components/StatTile.vue';
 import AdminLayout from '@/layouts/AdminLayout.vue';
 import { Link } from '@inertiajs/vue3';
-import { PhCaretRight, PhClock, PhSignOut, PhSoccerBall, PhTrophy, PhUser, PhUsersThree, PhWarning } from '@phosphor-icons/vue';
+import { PhCaretRight, PhClock, PhSignOut, PhSoccerBall, PhTrophy, PhUsers, PhUsersThree, PhWarning } from '@phosphor-icons/vue';
 import { computed } from 'vue';
 
 const props = defineProps<{
@@ -94,7 +94,7 @@ const todoCount = computed(() => props.missingScore + props.postponed);
 
             <div class="mt-5 px-5 font-[Doto] text-[#C4C4C4]">Gestion</div>
             <div class="grid grid-cols-2 gap-3.5 p-4">
-                <StatTile label="Joueurs" :value="users" :icon="PhUser" :href="route('admin.users')" />
+                <StatTile label="Joueurs" :value="users" :icon="PhUsers" :href="route('admin.users')" />
                 <StatTile
                     label="Matchs à venir"
                     :value="upcomingGames"
